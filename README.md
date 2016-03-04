@@ -22,7 +22,7 @@ pod "XLEasyKitUtils"
 
 ## Author
 
-晓亮, yanxiaoliang@baijiahulian.com
+晓亮, ouyaliang@163.com
 
 ## License
 

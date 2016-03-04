@@ -7,6 +7,7 @@
 //
 
 #import "XLEAppDelegate.h"
+#import <XLEasyKitUtils/XLEasyKitUtils.h>
 
 @implementation XLEAppDelegate
 

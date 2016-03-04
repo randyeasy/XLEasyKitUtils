@@ -17,24 +17,28 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+            UI相关的简单工具类
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/XLEasyKitUtils"
+  s.homepage         = "https://github.com/ouyaliang/XLEasyKitUtils"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "晓亮" => "yanxiaoliang@baijiahulian.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/XLEasyKitUtils.git", :tag => s.version.to_s }
+  s.author           = { "晓亮" => "ouyaliang@163.com" }
+  s.source           = { :git => "https://github.com/ouyaliang/XLEasyKitUtils.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'XLEasyKitUtils' => ['Pod/Assets/*.png']
-  }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.public_header_files = 'Pod/Classes/**/*.h'
+  s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+
+s.prefix_header_contents =
+'#import <PureLayout/PureLayout.h>'
+
+  s.dependency 'PureLayout'
+
 end

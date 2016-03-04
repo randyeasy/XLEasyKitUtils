@@ -1,0 +1,28 @@
+{
+  "name": "XLEasyKitUtils",
+  "version": "0.1.0",
+  "summary": "A short description of XLEasyKitUtils.",
+  "description": "UI相关的简单工具类",
+  "homepage": "https://github.com/ouyaliang/XLEasyKitUtils",
+  "license": "MIT",
+  "authors": {
+    "晓亮": "ouyaliang@163.com"
+  },
+  "source": {
+    "git": "https://github.com/ouyaliang/XLEasyKitUtils.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "public_header_files": "Pod/Classes/**/*.h",
+  "frameworks": "UIKit",
+  "prefix_header_contents": "#import <PureLayout/PureLayout.h>",
+  "dependencies": {
+    "PureLayout": [
+
+    ]
+  }
+}

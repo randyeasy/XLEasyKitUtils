@@ -1,0 +1,17 @@
+PODS:
+  - PureLayout (3.0.1)
+  - XLEasyKitUtils (0.1.0):
+    - PureLayout
+
+DEPENDENCIES:
+  - XLEasyKitUtils (from `../`)
+
+EXTERNAL SOURCES:
+  XLEasyKitUtils:
+    :path: ../
+
+SPEC CHECKSUMS:
+  PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
+  XLEasyKitUtils: 903b9b7778dcf5730e84f16f2722428baa10527f
+
+COCOAPODS: 0.39.0
