@@ -10,7 +10,7 @@
 
 @implementation UIColor (XLEUtil)
 
-+ (UIColor *)xle_colorWithHexString:(NSString *)color alpha:(CGFloat)alpha
++ (UIColor *)XLE_colorWithHexString:(NSString *)color alpha:(CGFloat)alpha
 {
     //删除字符串中的空格
     NSString *cString = [[color stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
@@ -57,9 +57,9 @@
 }
 
 //默认alpha值为1
-+ (UIColor *)xle_colorWithHexString:(NSString *)color
++ (UIColor *)XLE_colorWithHexString:(NSString *)color
 {
-    return [self xle_colorWithHexString:color alpha:1.0f];
+    return [self XLE_colorWithHexString:color alpha:1.0f];
 }
 
 @end

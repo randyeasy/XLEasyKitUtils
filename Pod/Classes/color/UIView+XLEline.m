@@ -12,35 +12,35 @@
 
 @implementation UIView (XLEline)
 
-+ (UIView *)xle_lineWithColor:(UIColor *)color frame:(CGRect)frame
++ (UIView *)XLE_lineWithColor:(UIColor *)color frame:(CGRect)frame
 {
     UIView *lineView = [[UIView alloc]initWithFrame:frame];
     [lineView setBackgroundColor:color];
     return lineView;
 }
 
-+ (UIView *)xle_lineWithColor:(UIColor *)color size:(CGSize)size
++ (UIView *)XLE_lineWithColor:(UIColor *)color size:(CGSize)size
 {
     UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     [lineView setBackgroundColor:color];
     return lineView;
 }
 
-+ (UIView *)xle_graylineWithFrame:(CGRect)frame
++ (UIView *)XLE_graylineWithFrame:(CGRect)frame
 {
     UIView *lineView = [[UIView alloc]initWithFrame:frame];
     [lineView setBackgroundColor:UICOLOR_FROM_RGB(229,229,229,1)];
     return lineView;
 }
 
-+ (UIView *)xle_graylineWithSize:(CGSize)size
++ (UIView *)XLE_graylineWithSize:(CGSize)size
 {
     UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     [lineView setBackgroundColor:UICOLOR_FROM_RGB(229,229,229,1)];
     return lineView;
 }
 
-+ (UIView *)xle_graylineWithWidth:(CGFloat)width
++ (UIView *)XLE_graylineWithWidth:(CGFloat)width
 {
     UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, width, 0.5)];
     [lineView setBackgroundColor:UICOLOR_FROM_RGB(229,229,229,1)];

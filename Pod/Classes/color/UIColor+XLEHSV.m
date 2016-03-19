@@ -24,7 +24,7 @@
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-void xle_RGBtoHSV(CGFloat r, CGFloat g, CGFloat b, CGFloat* h, CGFloat* s, CGFloat* v) {
+void XLE_RGBtoHSV(CGFloat r, CGFloat g, CGFloat b, CGFloat* h, CGFloat* s, CGFloat* v) {
   CGFloat min, max, delta;
   min = XLEMIN3(r, g, b);
   max = XLEMAX3(r, g, b);
@@ -51,7 +51,7 @@ void xle_RGBtoHSV(CGFloat r, CGFloat g, CGFloat b, CGFloat* h, CGFloat* s, CGFlo
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-void xle_HSVtoRGB( CGFloat *r, CGFloat *g, CGFloat *b, CGFloat h, CGFloat s, CGFloat v ) {
+void XLE_HSVtoRGB( CGFloat *r, CGFloat *g, CGFloat *b, CGFloat h, CGFloat s, CGFloat v ) {
   NSInteger i;
   CGFloat f, p, q, t;
   if ( s == 0 ) {
@@ -111,15 +111,15 @@ void xle_HSVtoRGB( CGFloat *r, CGFloat *g, CGFloat *b, CGFloat h, CGFloat s, CGF
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-+ (UIColor*)xle_colorWithHue:(CGFloat)h saturation:(CGFloat)s value:(CGFloat)v alpha:(CGFloat)a {
++ (UIColor*)XLE_colorWithHue:(CGFloat)h saturation:(CGFloat)s value:(CGFloat)v alpha:(CGFloat)a {
   CGFloat r, g, b;
-  xle_HSVtoRGB(&r, &g, &b, h, s, v);
+  XLE_HSVtoRGB(&r, &g, &b, h, s, v);
   return [UIColor colorWithRed:r green:g blue:b alpha:a];
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (UIColor*)xle_multiplyHue:(CGFloat)hd saturation:(CGFloat)sd value:(CGFloat)vd {
+- (UIColor*)XLE_multiplyHue:(CGFloat)hd saturation:(CGFloat)sd value:(CGFloat)vd {
   const CGFloat* rgba = CGColorGetComponents(self.CGColor);
   CGFloat r = rgba[0];
   CGFloat g = rgba[1];
@@ -127,20 +127,20 @@ void xle_HSVtoRGB( CGFloat *r, CGFloat *g, CGFloat *b, CGFloat h, CGFloat s, CGF
   CGFloat a = rgba[3];
 
   CGFloat h, s, v;
-  xle_RGBtoHSV(r, g, b, &h, &s, &v);
+  XLE_RGBtoHSV(r, g, b, &h, &s, &v);
 
   h *= hd;
   v *= vd;
   s *= sd;
 
-  xle_HSVtoRGB(&r, &g, &b, h, s, v);
+  XLE_HSVtoRGB(&r, &g, &b, h, s, v);
 
   return [UIColor colorWithRed:r green:g blue:b alpha:a];
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (UIColor*)xle_copyWithAlpha:(CGFloat)newAlpha {
+- (UIColor*)XLE_copyWithAlpha:(CGFloat)newAlpha {
   const CGFloat* rgba = CGColorGetComponents(self.CGColor);
   CGFloat r = rgba[0];
   CGFloat g = rgba[1];
@@ -151,7 +151,7 @@ void xle_HSVtoRGB( CGFloat *r, CGFloat *g, CGFloat *b, CGFloat h, CGFloat s, CGF
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (UIColor*)xle_addHue:(CGFloat)hd saturation:(CGFloat)sd value:(CGFloat)vd {
+- (UIColor*)XLE_addHue:(CGFloat)hd saturation:(CGFloat)sd value:(CGFloat)vd {
   const CGFloat* rgba = CGColorGetComponents(self.CGColor);
   CGFloat r = rgba[0];
   CGFloat g = rgba[1];
@@ -159,53 +159,53 @@ void xle_HSVtoRGB( CGFloat *r, CGFloat *g, CGFloat *b, CGFloat h, CGFloat s, CGF
   CGFloat a = rgba[3];
 
   CGFloat h, s, v;
-  xle_RGBtoHSV(r, g, b, &h, &s, &v);
+  XLE_RGBtoHSV(r, g, b, &h, &s, &v);
 
   h += hd;
   v += vd;
   s += sd;
 
-  xle_HSVtoRGB(&r, &g, &b, h, s, v);
+  XLE_HSVtoRGB(&r, &g, &b, h, s, v);
 
   return [UIColor colorWithRed:r green:g blue:b alpha:a];
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (UIColor*)xle_highlight {
-  return [self xle_multiplyHue:1 saturation:0.4 value:1.2];
+- (UIColor*)XLE_highlight {
+  return [self XLE_multiplyHue:1 saturation:0.4 value:1.2];
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (UIColor*)xle_shadow {
-  return [self xle_multiplyHue:1 saturation:0.6 value:0.6];
+- (UIColor*)XLE_shadow {
+  return [self XLE_multiplyHue:1 saturation:0.6 value:0.6];
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (CGFloat)xle_hue {
+- (CGFloat)XLE_hue {
   const CGFloat* rgba = CGColorGetComponents(self.CGColor);
   CGFloat h, s, v;
-  xle_RGBtoHSV(rgba[0], rgba[1], rgba[2], &h, &s, &v);
+  XLE_RGBtoHSV(rgba[0], rgba[1], rgba[2], &h, &s, &v);
   return h;
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (CGFloat)xle_saturation {
+- (CGFloat)XLE_saturation {
   const CGFloat* rgba = CGColorGetComponents(self.CGColor);
   CGFloat h, s, v;
-  xle_RGBtoHSV(rgba[0], rgba[1], rgba[2], &h, &s, &v);
+  XLE_RGBtoHSV(rgba[0], rgba[1], rgba[2], &h, &s, &v);
   return s;
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (CGFloat)xle_value {
+- (CGFloat)XLE_value {
   const CGFloat* rgba = CGColorGetComponents(self.CGColor);
   CGFloat h, s, v;
-  xle_RGBtoHSV(rgba[0], rgba[1], rgba[2], &h, &s, &v);
+  XLE_RGBtoHSV(rgba[0], rgba[1], rgba[2], &h, &s, &v);
   return v;
 }
 

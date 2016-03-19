@@ -10,15 +10,15 @@
 
 @interface UIView (XLEline)
 
-+ (UIView *)xle_lineWithColor:(UIColor *)color frame:(CGRect)frame;
++ (UIView *)XLE_lineWithColor:(UIColor *)color frame:(CGRect)frame;
 
-+ (UIView *)xle_lineWithColor:(UIColor *)color size:(CGSize)size;
++ (UIView *)XLE_lineWithColor:(UIColor *)color size:(CGSize)size;
 
-+ (UIView *)xle_graylineWithFrame:(CGRect)frame;
++ (UIView *)XLE_graylineWithFrame:(CGRect)frame;
 
-+ (UIView *)xle_graylineWithSize:(CGSize)size;
++ (UIView *)XLE_graylineWithSize:(CGSize)size;
 
-+ (UIView *)xle_graylineWithWidth:(CGFloat)width;
++ (UIView *)XLE_graylineWithWidth:(CGFloat)width;
 
 
 @end

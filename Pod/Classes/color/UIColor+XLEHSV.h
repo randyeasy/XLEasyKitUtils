@@ -27,7 +27,7 @@
  *      value: 0.0 - 1.0
  *      alpha: 0.0 - 1.0
  */
-+ (UIColor*)xle_colorWithHue:(CGFloat)h saturation:(CGFloat)s value:(CGFloat)v alpha:(CGFloat)a;
++ (UIColor*)XLE_colorWithHue:(CGFloat)h saturation:(CGFloat)s value:(CGFloat)v alpha:(CGFloat)a;
 
 /**
  * Accepted ranges:
@@ -35,29 +35,29 @@
  * saturation: 0.0 - 1.0
  *      value: 0.0 - 1.0
  */
-- (UIColor*)xle_multiplyHue:(CGFloat)hd saturation:(CGFloat)sd value:(CGFloat)vd;
+- (UIColor*)XLE_multiplyHue:(CGFloat)hd saturation:(CGFloat)sd value:(CGFloat)vd;
 
-- (UIColor*)xle_addHue:(CGFloat)hd saturation:(CGFloat)sd value:(CGFloat)vd;
+- (UIColor*)XLE_addHue:(CGFloat)hd saturation:(CGFloat)sd value:(CGFloat)vd;
 
 /**
  * Returns a new UIColor with the given alpha.
  */
-- (UIColor*)xle_copyWithAlpha:(CGFloat)newAlpha;
+- (UIColor*)XLE_copyWithAlpha:(CGFloat)newAlpha;
 
 /**
  * Uses multiplyHue:saturation:value:alpha: to create a lighter version of the color.
  */
-- (UIColor*)xle_highlight;
+- (UIColor*)XLE_highlight;
 
 /**
  * Uses multiplyHue:saturation:value:alpha: to create a darker version of the color.
  */
-- (UIColor*)xle_shadow;
+- (UIColor*)XLE_shadow;
 
-- (CGFloat)xle_hue;
+- (CGFloat)XLE_hue;
 
-- (CGFloat)xle_saturation;
+- (CGFloat)XLE_saturation;
 
-- (CGFloat)xle_value;
+- (CGFloat)XLE_value;
 
 @end

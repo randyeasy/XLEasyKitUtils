@@ -13,14 +13,14 @@
 
 @interface UIButton (XLEEdgeInsets)
 
-- (void)xle_setImagePoint:(CGPoint)point;
-- (void)xle_setTitlePoint:(CGPoint)point;
+- (void)XLE_setImagePoint:(CGPoint)point;
+- (void)XLE_setTitlePoint:(CGPoint)point;
 
-- (void)xle_setImageEdgeWithOffset:(CGFloat)offset
+- (void)XLE_setImageEdgeWithOffset:(CGFloat)offset
                          direction:(XLEViewDirectionType)direction;
-- (void)xle_setTitleEdgeWithOffset:(CGFloat)offset
+- (void)XLE_setTitleEdgeWithOffset:(CGFloat)offset
                          direction:(XLEViewDirectionType)direction;
-- (void)xle_setContentEdgeWithOffset:(CGFloat)offset
+- (void)XLE_setContentEdgeWithOffset:(CGFloat)offset
                          direction:(XLEViewDirectionType)direction;
 
 @end

@@ -10,7 +10,7 @@
 
 @implementation UIButton (XLEEdgeInsets)
 
-- (void)xle_setImagePoint:(CGPoint)point;
+- (void)XLE_setImagePoint:(CGPoint)point;
 {
     [self sizeToFit];
     self.imageEdgeInsets = UIEdgeInsetsZero;
@@ -25,7 +25,7 @@
     }
 }
 
-- (void)xle_setTitlePoint:(CGPoint)point;
+- (void)XLE_setTitlePoint:(CGPoint)point;
 {
     [self sizeToFit];
     self.titleEdgeInsets = UIEdgeInsetsZero;
@@ -40,19 +40,19 @@
     }
 }
 
-- (void)xle_setImageEdgeWithOffset:(CGFloat)offset
+- (void)XLE_setImageEdgeWithOffset:(CGFloat)offset
                          direction:(XLEViewDirectionType)direction;
 {
     self.imageEdgeInsets = [self edgeInsetsWithOffset:offset directin:direction];
 }
 
-- (void)xle_setTitleEdgeWithOffset:(CGFloat)offset
+- (void)XLE_setTitleEdgeWithOffset:(CGFloat)offset
                          direction:(XLEViewDirectionType)direction;
 {
     self.titleEdgeInsets = [self edgeInsetsWithOffset:offset directin:direction];
 }
 
-- (void)xle_setContentEdgeWithOffset:(CGFloat)offset
+- (void)XLE_setContentEdgeWithOffset:(CGFloat)offset
                            direction:(XLEViewDirectionType)direction;
 {
     self.contentEdgeInsets = [self edgeInsetsWithOffset:offset directin:direction];

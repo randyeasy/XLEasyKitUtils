@@ -49,18 +49,18 @@ static const void *XLEActionSheetCancelBlockKey      = &XLEActionSheetCancelBloc
 #define NSArrayToVariableArgumentsList(__ARRAYNAME__) NSArrayObjectMaybeNil(__ARRAYNAME__, 0), NSArrayObjectMaybeNil(__ARRAYNAME__, 1), NSArrayObjectMaybeNil(__ARRAYNAME__, 2), NSArrayObjectMaybeNil(__ARRAYNAME__, 3), NSArrayObjectMaybeNil(__ARRAYNAME__, 4), NSArrayObjectMaybeNil(__ARRAYNAME__, 5), NSArrayObjectMaybeNil(__ARRAYNAME__, 6), NSArrayObjectMaybeNil(__ARRAYNAME__, 7), NSArrayObjectMaybeNil(__ARRAYNAME__, 8), NSArrayObjectMaybeNil(__ARRAYNAME__, 9), nil
 
 @interface UIActionSheet ()
-@property (strong, nonatomic) XLEActionSheetProxy *xle_proxy;
+@property (strong, nonatomic) XLEActionSheetProxy *XLE_proxy;
 @end
 
 @implementation UIActionSheet (XLEBlocks)
-@dynamic xle_tapBlock;
-@dynamic xle_cancelBlock;
-@dynamic xle_didDismissBlock;
-@dynamic xle_didPresentBlock;
-@dynamic xle_willDismissBlock;
-@dynamic xle_willPresentBlock;
+@dynamic XLE_tapBlock;
+@dynamic XLE_cancelBlock;
+@dynamic XLE_didDismissBlock;
+@dynamic XLE_didPresentBlock;
+@dynamic XLE_willDismissBlock;
+@dynamic XLE_willPresentBlock;
 
-+ (instancetype)xle_showFromTabBar:(UITabBar *)tabBar
++ (instancetype)XLE_showFromTabBar:(UITabBar *)tabBar
                      withTitle:(NSString *)title
              cancelButtonTitle:(NSString *)cancelButtonTitle
         destructiveButtonTitle:(NSString *)destructiveButtonTitle
@@ -74,7 +74,7 @@ static const void *XLEActionSheetCancelBlockKey      = &XLEActionSheetCancelBloc
                                            otherButtonTitles:NSArrayToVariableArgumentsList(otherButtonTitles)];
 
     if (tapBlock) {
-        actionSheet.xle_tapBlock = tapBlock;
+        actionSheet.XLE_tapBlock = tapBlock;
     }
     
     [actionSheet showFromTabBar:tabBar];
@@ -86,7 +86,7 @@ static const void *XLEActionSheetCancelBlockKey      = &XLEActionSheetCancelBloc
 #endif
 }
 
-+ (instancetype)xle_showFromToolbar:(UIToolbar *)toolbar
++ (instancetype)XLE_showFromToolbar:(UIToolbar *)toolbar
                       withTitle:(NSString *)title
               cancelButtonTitle:(NSString *)cancelButtonTitle
          destructiveButtonTitle:(NSString *)destructiveButtonTitle
@@ -100,7 +100,7 @@ static const void *XLEActionSheetCancelBlockKey      = &XLEActionSheetCancelBloc
                                            otherButtonTitles:NSArrayToVariableArgumentsList(otherButtonTitles)];
 
     if (tapBlock) {
-        actionSheet.xle_tapBlock = tapBlock;
+        actionSheet.XLE_tapBlock = tapBlock;
     }
     
     [actionSheet showFromToolbar:toolbar];
@@ -112,7 +112,7 @@ static const void *XLEActionSheetCancelBlockKey      = &XLEActionSheetCancelBloc
 #endif
 }
 
-+ (instancetype)xle_showInView:(UIView *)view
++ (instancetype)XLE_showInView:(UIView *)view
                  withTitle:(NSString *)title
          cancelButtonTitle:(NSString *)cancelButtonTitle
     destructiveButtonTitle:(NSString *)destructiveButtonTitle
@@ -126,7 +126,7 @@ static const void *XLEActionSheetCancelBlockKey      = &XLEActionSheetCancelBloc
                                            otherButtonTitles:NSArrayToVariableArgumentsList(otherButtonTitles)];
 
     if (tapBlock) {
-        actionSheet.xle_tapBlock = tapBlock;
+        actionSheet.XLE_tapBlock = tapBlock;
     }
     
     [actionSheet showInView:view];
@@ -138,7 +138,7 @@ static const void *XLEActionSheetCancelBlockKey      = &XLEActionSheetCancelBloc
 #endif
 }
 
-+ (instancetype)xle_showFromBarButtonItem:(UIBarButtonItem *)barButtonItem
++ (instancetype)XLE_showFromBarButtonItem:(UIBarButtonItem *)barButtonItem
                              animated:(BOOL)animated
                             withTitle:(NSString *)title
                     cancelButtonTitle:(NSString *)cancelButtonTitle
@@ -153,7 +153,7 @@ static const void *XLEActionSheetCancelBlockKey      = &XLEActionSheetCancelBloc
                                            otherButtonTitles:NSArrayToVariableArgumentsList(otherButtonTitles)];
 
     if (tapBlock) {
-        actionSheet.xle_tapBlock = tapBlock;
+        actionSheet.XLE_tapBlock = tapBlock;
     }
     
     [actionSheet showFromBarButtonItem:barButtonItem animated:animated];
@@ -165,7 +165,7 @@ static const void *XLEActionSheetCancelBlockKey      = &XLEActionSheetCancelBloc
 #endif
 }
 
-+ (instancetype)xle_showFromRect:(CGRect)rect
++ (instancetype)XLE_showFromRect:(CGRect)rect
                       inView:(UIView *)view
                     animated:(BOOL)animated
                    withTitle:(NSString *)title
@@ -181,7 +181,7 @@ static const void *XLEActionSheetCancelBlockKey      = &XLEActionSheetCancelBloc
                                            otherButtonTitles:NSArrayToVariableArgumentsList(otherButtonTitles)];
 
     if (tapBlock) {
-        actionSheet.xle_tapBlock = tapBlock;
+        actionSheet.XLE_tapBlock = tapBlock;
     }
     
     [actionSheet showFromRect:rect inView:view animated:animated];
@@ -194,78 +194,78 @@ static const void *XLEActionSheetCancelBlockKey      = &XLEActionSheetCancelBloc
 }
 
 #pragma mark - set get
-- (XLEActionSheetProxy *)xle_proxy{
+- (XLEActionSheetProxy *)XLE_proxy{
     XLEActionSheetProxy *proxy = objc_getAssociatedObject(self, XLEActionSheetProxyKey);
     if (proxy == nil) {
         proxy = [[XLEActionSheetProxy alloc] init];
-        [self setXle_proxy:proxy];
+        [self setXLE_proxy:proxy];
     }
     return proxy;
 }
 
-- (void)setXle_proxy:(XLEActionSheetProxy *)xle_proxy
+- (void)setXLE_proxy:(XLEActionSheetProxy *)XLE_proxy
 {
-    objc_setAssociatedObject(self, XLEActionSheetProxyKey, xle_proxy, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, XLEActionSheetProxyKey, XLE_proxy, OBJC_ASSOCIATION_RETAIN);
 }
 
-- (void)xle_checkActionSheetDelegate {
-    if (self.delegate != self.xle_proxy) {
+- (void)XLE_checkActionSheetDelegate {
+    if (self.delegate != self.XLE_proxy) {
         objc_setAssociatedObject(self, XLEActionSheetOriginalDelegateKey, self.delegate, OBJC_ASSOCIATION_ASSIGN);
-        self.delegate = self.xle_proxy;
+        self.delegate = self.XLE_proxy;
     }
 }
 
-- (XLEActionSheetCompletionBlock)xle_tapBlock {
+- (XLEActionSheetCompletionBlock)XLE_tapBlock {
     return objc_getAssociatedObject(self, XLEActionSheetTapBlockKey);
 }
 
-- (void)setXle_tapBlock:(XLEActionSheetCompletionBlock)tapBlock {
-    [self xle_checkActionSheetDelegate];
+- (void)setXLE_tapBlock:(XLEActionSheetCompletionBlock)tapBlock {
+    [self XLE_checkActionSheetDelegate];
     objc_setAssociatedObject(self, XLEActionSheetTapBlockKey, tapBlock, OBJC_ASSOCIATION_COPY);
 }
 
-- (XLEActionSheetCompletionBlock)xle_willDismissBlock {
+- (XLEActionSheetCompletionBlock)XLE_willDismissBlock {
     return objc_getAssociatedObject(self, XLEActionSheetWillDismissBlockKey);
 }
 
-- (void)setXle_willDismissBlock:(XLEActionSheetCompletionBlock)willDismissBlock {
-    [self xle_checkActionSheetDelegate];
+- (void)setXLE_willDismissBlock:(XLEActionSheetCompletionBlock)willDismissBlock {
+    [self XLE_checkActionSheetDelegate];
     objc_setAssociatedObject(self, XLEActionSheetWillDismissBlockKey, willDismissBlock, OBJC_ASSOCIATION_COPY);
 }
 
-- (XLEActionSheetCompletionBlock)xle_didDismissBlock {
+- (XLEActionSheetCompletionBlock)XLE_didDismissBlock {
     return objc_getAssociatedObject(self, XLEActionSheetDidDismissBlockKey);
 }
 
-- (void)setXle_didDismissBlock:(XLEActionSheetCompletionBlock)didDismissBlock {
-    [self xle_checkActionSheetDelegate];
+- (void)setXLE_didDismissBlock:(XLEActionSheetCompletionBlock)didDismissBlock {
+    [self XLE_checkActionSheetDelegate];
     objc_setAssociatedObject(self, XLEActionSheetDidDismissBlockKey, didDismissBlock, OBJC_ASSOCIATION_COPY);
 }
 
-- (XLEActionSheetBlock)xle_willPresentBlock {
+- (XLEActionSheetBlock)XLE_willPresentBlock {
     return objc_getAssociatedObject(self, XLEActionSheetWillPresentBlockKey);
 }
 
-- (void)setXle_willPresentBlock:(XLEActionSheetBlock)willPresentBlock {
-    [self xle_checkActionSheetDelegate];
+- (void)setXLE_willPresentBlock:(XLEActionSheetBlock)willPresentBlock {
+    [self XLE_checkActionSheetDelegate];
     objc_setAssociatedObject(self, XLEActionSheetWillPresentBlockKey, willPresentBlock, OBJC_ASSOCIATION_COPY);
 }
 
-- (XLEActionSheetBlock)xle_didPresentBlock {
+- (XLEActionSheetBlock)XLE_didPresentBlock {
     return objc_getAssociatedObject(self, XLEActionSheetDidPresentBlockKey);
 }
 
-- (void)setXle_didPresentBlock:(XLEActionSheetBlock)didPresentBlock {
-    [self xle_checkActionSheetDelegate];
+- (void)setXLE_didPresentBlock:(XLEActionSheetBlock)didPresentBlock {
+    [self XLE_checkActionSheetDelegate];
     objc_setAssociatedObject(self, XLEActionSheetDidPresentBlockKey, didPresentBlock, OBJC_ASSOCIATION_COPY);
 }
 
-- (XLEActionSheetBlock)xle_cancelBlock {
+- (XLEActionSheetBlock)XLE_cancelBlock {
     return objc_getAssociatedObject(self, XLEActionSheetCancelBlockKey);
 }
 
-- (void)setXle_cancelBlock:(XLEActionSheetBlock)cancelBlock {
-    [self xle_checkActionSheetDelegate];
+- (void)setXLE_cancelBlock:(XLEActionSheetBlock)cancelBlock {
+    [self XLE_checkActionSheetDelegate];
     objc_setAssociatedObject(self, XLEActionSheetCancelBlockKey, cancelBlock, OBJC_ASSOCIATION_COPY);
 }
 
@@ -277,7 +277,7 @@ static const void *XLEActionSheetCancelBlockKey      = &XLEActionSheetCancelBloc
 #pragma mark - UIActionSheetDelegate
 
 - (void)willPresentActionSheet:(UIActionSheet *)actionSheet {
-    XLEActionSheetBlock completion = actionSheet.xle_willPresentBlock;
+    XLEActionSheetBlock completion = actionSheet.XLE_willPresentBlock;
     
     if (completion) {
         completion(actionSheet);
@@ -290,7 +290,7 @@ static const void *XLEActionSheetCancelBlockKey      = &XLEActionSheetCancelBloc
 }
 
 - (void)didPresentActionSheet:(UIActionSheet *)actionSheet {
-    XLEActionSheetBlock completion = actionSheet.xle_didPresentBlock;
+    XLEActionSheetBlock completion = actionSheet.XLE_didPresentBlock;
     
     if (completion) {
         completion(actionSheet);
@@ -303,7 +303,7 @@ static const void *XLEActionSheetCancelBlockKey      = &XLEActionSheetCancelBloc
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    XLEActionSheetCompletionBlock completion = actionSheet.xle_tapBlock;
+    XLEActionSheetCompletionBlock completion = actionSheet.XLE_tapBlock;
     
     if (completion) {
         completion(actionSheet, buttonIndex);
@@ -316,7 +316,7 @@ static const void *XLEActionSheetCancelBlockKey      = &XLEActionSheetCancelBloc
 }
 
 - (void)actionSheetCancel:(UIActionSheet *)actionSheet {
-    XLEActionSheetBlock completion = actionSheet.xle_cancelBlock;
+    XLEActionSheetBlock completion = actionSheet.XLE_cancelBlock;
     
     if (completion) {
         completion(actionSheet);
@@ -329,7 +329,7 @@ static const void *XLEActionSheetCancelBlockKey      = &XLEActionSheetCancelBloc
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex {
-    XLEActionSheetCompletionBlock completion = actionSheet.xle_willDismissBlock;
+    XLEActionSheetCompletionBlock completion = actionSheet.XLE_willDismissBlock;
     
     if (completion) {
         completion(actionSheet, buttonIndex);
@@ -342,7 +342,7 @@ static const void *XLEActionSheetCancelBlockKey      = &XLEActionSheetCancelBloc
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    XLEActionSheetCompletionBlock completion = actionSheet.xle_didDismissBlock;
+    XLEActionSheetCompletionBlock completion = actionSheet.XLE_didDismissBlock;
     
     if (completion) {
         completion(actionSheet, buttonIndex);

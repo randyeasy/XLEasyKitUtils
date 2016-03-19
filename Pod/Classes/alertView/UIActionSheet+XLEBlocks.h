@@ -33,28 +33,28 @@ typedef void (^XLEActionSheetCompletionBlock) (UIActionSheet *actionSheet, NSInt
 
 @interface UIActionSheet (XLEBlocks)
 
-+ (instancetype)xle_showFromTabBar:(UITabBar *)tabBar
++ (instancetype)XLE_showFromTabBar:(UITabBar *)tabBar
                      withTitle:(NSString *)title
              cancelButtonTitle:(NSString *)cancelButtonTitle
         destructiveButtonTitle:(NSString *)destructiveButtonTitle
              otherButtonTitles:(NSArray *)otherButtonTitles
                       tapBlock:(XLEActionSheetCompletionBlock)tapBlock;
 
-+ (instancetype)xle_showFromToolbar:(UIToolbar *)toolbar
++ (instancetype)XLE_showFromToolbar:(UIToolbar *)toolbar
                       withTitle:(NSString *)title
               cancelButtonTitle:(NSString *)cancelButtonTitle
          destructiveButtonTitle:(NSString *)destructiveButtonTitle
               otherButtonTitles:(NSArray *)otherButtonTitles
                        tapBlock:(XLEActionSheetCompletionBlock)tapBlock;
 
-+ (instancetype)xle_showInView:(UIView *)view
++ (instancetype)XLE_showInView:(UIView *)view
                  withTitle:(NSString *)title
          cancelButtonTitle:(NSString *)cancelButtonTitle
     destructiveButtonTitle:(NSString *)destructiveButtonTitle
          otherButtonTitles:(NSArray *)otherButtonTitles
                   tapBlock:(XLEActionSheetCompletionBlock)tapBlock;
 
-+ (instancetype)xle_showFromBarButtonItem:(UIBarButtonItem *)barButtonItem
++ (instancetype)XLE_showFromBarButtonItem:(UIBarButtonItem *)barButtonItem
                              animated:(BOOL)animated
                             withTitle:(NSString *)title
                     cancelButtonTitle:(NSString *)cancelButtonTitle
@@ -62,7 +62,7 @@ typedef void (^XLEActionSheetCompletionBlock) (UIActionSheet *actionSheet, NSInt
                     otherButtonTitles:(NSArray *)otherButtonTitles
                              tapBlock:(XLEActionSheetCompletionBlock)tapBlock;
 
-+ (instancetype)xle_showFromRect:(CGRect)rect
++ (instancetype)XLE_showFromRect:(CGRect)rect
                       inView:(UIView *)view
                     animated:(BOOL)animated
                    withTitle:(NSString *)title
@@ -71,12 +71,12 @@ typedef void (^XLEActionSheetCompletionBlock) (UIActionSheet *actionSheet, NSInt
            otherButtonTitles:(NSArray *)otherButtonTitles
                     tapBlock:(XLEActionSheetCompletionBlock)tapBlock;
 
-@property (copy, nonatomic) XLEActionSheetCompletionBlock xle_tapBlock;
-@property (copy, nonatomic) XLEActionSheetCompletionBlock xle_willDismissBlock;
-@property (copy, nonatomic) XLEActionSheetCompletionBlock xle_didDismissBlock;
+@property (copy, nonatomic) XLEActionSheetCompletionBlock XLE_tapBlock;
+@property (copy, nonatomic) XLEActionSheetCompletionBlock XLE_willDismissBlock;
+@property (copy, nonatomic) XLEActionSheetCompletionBlock XLE_didDismissBlock;
 
-@property (copy, nonatomic) XLEActionSheetBlock xle_willPresentBlock;
-@property (copy, nonatomic) XLEActionSheetBlock xle_didPresentBlock;
-@property (copy, nonatomic) XLEActionSheetBlock xle_cancelBlock;
+@property (copy, nonatomic) XLEActionSheetBlock XLE_willPresentBlock;
+@property (copy, nonatomic) XLEActionSheetBlock XLE_didPresentBlock;
+@property (copy, nonatomic) XLEActionSheetBlock XLE_cancelBlock;
 
 @end

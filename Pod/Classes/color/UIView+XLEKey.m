@@ -1,5 +1,5 @@
 //
-//  UIView+xleKey.m
+//  UIView+XLEKey.m
 //  Pods
 //
 //  Created by Randy on 15/11/27.
@@ -12,17 +12,17 @@
 static char XLEViewObjectKey;
 
 @implementation UIView (XLEKey)
-@dynamic xle_key;
+@dynamic XLE_key;
 
-- (id)xle_key
+- (id)XLE_key
 {
     return objc_getAssociatedObject(self, &XLEViewObjectKey);
 }
 
-- (void)setXle_key:(id)xle_key
+- (void)setXLE_key:(id)XLE_key
 {
     objc_setAssociatedObject(self, &XLEViewObjectKey,
-                             xle_key,
+                             XLE_key,
                              OBJC_ASSOCIATION_RETAIN);
 }
 

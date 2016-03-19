@@ -16,10 +16,10 @@
 
 @implementation UIAlertView (XLEBlock)
 static char key;
-static char xleProxy;
+static char XLEProxy;
 
 // 用Block的方式回调，这时候会默认用self作为Delegate
-- (void)xle_showAlertViewWithCompleteBlock:(XLECompleteBlock)block
+- (void)XLE_showAlertViewWithCompleteBlock:(XLECompleteBlock)block
 {
     if (block) {
         ////移除所有关联
@@ -33,7 +33,7 @@ static char xleProxy;
         ////设置delegate
         XLEAlertViewProxy *proxy = [[XLEAlertViewProxy alloc] init];
         proxy.alertView = self;
-        objc_setAssociatedObject(self, &xleProxy, proxy, OBJC_ASSOCIATION_RETAIN);
+        objc_setAssociatedObject(self, &XLEProxy, proxy, OBJC_ASSOCIATION_RETAIN);
         self.delegate = proxy;
     }
     ////show
@@ -41,7 +41,7 @@ static char xleProxy;
 }
 
 
-- (XLECompleteBlock)xle_block
+- (XLECompleteBlock)XLE_block
 {
     XLECompleteBlock block = objc_getAssociatedObject(self, &key);
     return block;
@@ -62,7 +62,7 @@ static char xleProxy;
 #pragma mark - UIAlertView delegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     ///获取关联的对象，通过关键字。
-    XLECompleteBlock block = [self.alertView xle_block];
+    XLECompleteBlock block = [self.alertView XLE_block];
     if (block) {
         ///block传值
         block(buttonIndex);

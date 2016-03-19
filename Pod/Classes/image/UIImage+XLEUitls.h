@@ -1,5 +1,5 @@
 //
-//  UIImage+xleUitls.h
+//  UIImage+XLEUitls.h
 //  Pods
 //
 //  Created by Randy on 15/12/5.
@@ -10,18 +10,18 @@
 
 @interface UIImage (XLEUitls)
 
-- (UIImage *)xle_imageToSize:(CGSize) size;
-- (UIImage *)xle_grayImage;
-- (UIImage *)xle_imageWithRenderingOriginal;
-- (UIImage *)xle_imageWithRenderingTemplate;
-+ (UIImage *)xle_imageWithColor:(UIColor *)color size:(CGSize)imgSize;
-- (UIImage *)xle_imageWithTintColor:(UIColor *)tintColor;
-- (UIImage *)xle_imageWithGradientTintColor:(UIColor *)tintColor;
+- (UIImage *)XLE_imageToSize:(CGSize) size;
+- (UIImage *)XLE_grayImage;
+- (UIImage *)XLE_imageWithRenderingOriginal;
+- (UIImage *)XLE_imageWithRenderingTemplate;
++ (UIImage *)XLE_imageWithColor:(UIColor *)color size:(CGSize)imgSize;
+- (UIImage *)XLE_imageWithTintColor:(UIColor *)tintColor;
+- (UIImage *)XLE_imageWithGradientTintColor:(UIColor *)tintColor;
 
-- (UIImage *)xle_imageWithTintColor:(UIColor *)tintColor blendMode:(CGBlendMode)blendMode;
+- (UIImage *)XLE_imageWithTintColor:(UIColor *)tintColor blendMode:(CGBlendMode)blendMode;
 
-+ (UIImage *)xle_imageFromView:(UIView *)orgView;
++ (UIImage *)XLE_imageFromView:(UIView *)orgView;
 
-+ (UIImage *)xle_imageFromAttributtedText:(NSAttributedString *)aAtt size:(CGSize)size;
++ (UIImage *)XLE_imageFromAttributtedText:(NSAttributedString *)aAtt size:(CGSize)size;
 
 @end

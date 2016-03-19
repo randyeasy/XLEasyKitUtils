@@ -15,15 +15,15 @@
 // Top
 //////////
 
--(void)xle_addTopBorderWithHeight: (CGFloat)height andColor:(UIColor*)color{
-    [self xle_addTopBorderWithHeight:height color:color leftOffset:0 rightOffset:0 andTopOffset:0];
+-(void)XLE_addTopBorderWithHeight: (CGFloat)height andColor:(UIColor*)color{
+    [self XLE_addTopBorderWithHeight:height color:color leftOffset:0 rightOffset:0 andTopOffset:0];
 }
 
 //////////
 // Top + Offset
 //////////
 
--(void)xle_addTopBorderWithHeight: (CGFloat)height color:(UIColor*)color leftOffset:(CGFloat)leftOffset rightOffset:(CGFloat)rightOffset andTopOffset:(CGFloat)topOffset {
+-(void)XLE_addTopBorderWithHeight: (CGFloat)height color:(UIColor*)color leftOffset:(CGFloat)leftOffset rightOffset:(CGFloat)rightOffset andTopOffset:(CGFloat)topOffset {
     UIView *borderView = [UIView newAutoLayoutView];
     [self addSubview:borderView];
     [borderView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:topOffset];
@@ -38,8 +38,8 @@
 // Right
 //////////
 
--(void)xle_addRightBorderWithWidth: (CGFloat)width andColor:(UIColor*)color{
-    [self xle_addRightBorderWithWidth:width color:color rightOffset:0 topOffset:0 andBottomOffset:0];
+-(void)XLE_addRightBorderWithWidth: (CGFloat)width andColor:(UIColor*)color{
+    [self XLE_addRightBorderWithWidth:width color:color rightOffset:0 topOffset:0 andBottomOffset:0];
 }
 
 
@@ -49,7 +49,7 @@
 //////////
 
 
--(void)xle_addRightBorderWithWidth: (CGFloat)width color:(UIColor*)color rightOffset:(CGFloat)rightOffset topOffset:(CGFloat)topOffset andBottomOffset:(CGFloat)bottomOffset{
+-(void)XLE_addRightBorderWithWidth: (CGFloat)width color:(UIColor*)color rightOffset:(CGFloat)rightOffset topOffset:(CGFloat)topOffset andBottomOffset:(CGFloat)bottomOffset{
     
     UIView *borderView = [UIView newAutoLayoutView];
     [self addSubview:borderView];
@@ -64,8 +64,8 @@
 //////////
 // Bottom
 //////////
--(void)xle_addBottomBorderWithHeight: (CGFloat)height andColor:(UIColor*)color{
-    [self xle_addBottomBorderWithHeight:height color:color leftOffset:0 rightOffset:0 andBottomOffset:0];
+-(void)XLE_addBottomBorderWithHeight: (CGFloat)height andColor:(UIColor*)color{
+    [self XLE_addBottomBorderWithHeight:height color:color leftOffset:0 rightOffset:0 andBottomOffset:0];
 }
 
 
@@ -74,7 +74,7 @@
 // Bottom + Offset
 //////////
 
--(void)xle_addBottomBorderWithHeight: (CGFloat)height color:(UIColor*)color leftOffset:(CGFloat)leftOffset rightOffset:(CGFloat)rightOffset andBottomOffset:(CGFloat)bottomOffset {
+-(void)XLE_addBottomBorderWithHeight: (CGFloat)height color:(UIColor*)color leftOffset:(CGFloat)leftOffset rightOffset:(CGFloat)rightOffset andBottomOffset:(CGFloat)bottomOffset {
     UIView *borderView = [UIView newAutoLayoutView];
     [self addSubview:borderView];
     [borderView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:bottomOffset];
@@ -90,14 +90,14 @@
 // Left
 //////////
 
--(void)xle_addLeftBorderWithWidth: (CGFloat)width andColor:(UIColor*)color{
-    [self xle_addLeftBorderWithWidth:width color:color leftOffset:0 topOffset:0 andBottomOffset:0];
+-(void)XLE_addLeftBorderWithWidth: (CGFloat)width andColor:(UIColor*)color{
+    [self XLE_addLeftBorderWithWidth:width color:color leftOffset:0 topOffset:0 andBottomOffset:0];
 }
 
 ///------------
 /// verMiddle Border 给view垂直方向中线加线，线框粗细和颜色可设定
 ///------------
--(void)xle_addVerMiddleLineWithWidth: (CGFloat)width andColor:(UIColor*)color
+-(void)XLE_addVerMiddleLineWithWidth: (CGFloat)width andColor:(UIColor*)color
 {
     UIView *borderView = [UIView newAutoLayoutView];
     [self addSubview:borderView];
@@ -113,7 +113,7 @@
 // Left + Offset
 //////////
 
--(void)xle_addLeftBorderWithWidth: (CGFloat)width color:(UIColor*)color leftOffset:(CGFloat)leftOffset topOffset:(CGFloat)topOffset andBottomOffset:(CGFloat)bottomOffset {
+-(void)XLE_addLeftBorderWithWidth: (CGFloat)width color:(UIColor*)color leftOffset:(CGFloat)leftOffset topOffset:(CGFloat)topOffset andBottomOffset:(CGFloat)bottomOffset {
     
     UIView *borderView = [UIView newAutoLayoutView];
     [self addSubview:borderView];
